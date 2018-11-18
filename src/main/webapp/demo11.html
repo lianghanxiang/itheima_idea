@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>axios数据调用</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+    <script src="js/axios-0.18.0.js"></script>
+</head>
+<body>
+<div id="app">
+    {{message}} <br>
+    <button type="button" @click="init">哈哈</button>
+
+
+    <h3>深圳书城</h3>
+</div>
+
+</body>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            message:"hello world"
+        },
+        methods:{
+            init:function () {
+                alert("传递的参数是:"+this.message)
+                axios.get("./data/user.json").then(function (response) {
+                    console.log(response);
+                })
+            },
+        created:function () {
+                alert("1");
+            this.init();
+        }
+        }
+    })
+</script>
+</html>

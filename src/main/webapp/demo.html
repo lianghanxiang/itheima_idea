@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue快速入门</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        <hr>
+        {{message2}}
+
+    </div>
+    <script>
+        new Vue({
+            el:"#app",//表示当前vue对象接管了div区域
+            data:{
+                message:10,
+                message2:"hello world"
+            }
+        })
+    </script>
+</body>
+</html>

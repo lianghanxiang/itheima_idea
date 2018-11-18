@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件修饰符</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+    <div id="app">
+        <form v-on:submit.prevent="" action="http://www.itheima.com">
+            <input type="submit" value="提交">
+        </form>
+
+        <div @click="fun">
+            <a @click.stop href="http://www.itheima.com">呵呵</a> <br>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    //.stop  停止触发,阻止冒泡修饰符
+    //.prevent 阻止事件发生,阻止事件默认行为
+    //capture   捕获
+    //self     只点自己身上才允许
+    //once  只执行一次
+    new Vue({
+        el:"#app",
+        methods:{
+            fun:function () {
+                alert(1);
+            }
+        }
+    })
+</script>
+</html>
